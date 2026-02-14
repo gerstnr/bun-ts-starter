@@ -1,0 +1,33 @@
+{
+  "name": "bun-ts-starter",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Bun + TypeScript starter for agentic coding projects",
+  "type": "module",
+  "scripts": {
+    "start": "bun src/main.ts",
+    "clean": "rm -rf coverage tmp",
+    "lint": "eslint .",
+    "test": "vitest run unit --config __tests__/vitest.config.ts",
+    "test:coverage": "vitest run unit --config __tests__/vitest.config.ts --coverage.enabled --coverage.all",
+    "test:watch": "vitest unit",
+    "prettier": "prettier \"{src,__{tests}__}/**/*.{ts,mts}\" --config .prettierrc --write",
+    "prettier:check": "prettier \"{src,__{tests}__}/**/*.{ts,mts}\" --config .prettierrc --check"
+  },
+  "devDependencies": {
+    "@eslint/js": "~9.39",
+    "@fission-ai/openspec": "latest",
+    "@types/node": "~24",
+    "@vitest/coverage-v8": "~4.0",
+    "@vitest/eslint-plugin": "~1.6",
+    "eslint": "~9.39",
+    "eslint-config-prettier": "~10.1",
+    "globals": "~17.1",
+    "prettier": "~3.8",
+    "typescript": "~5.9",
+    "typescript-eslint": "~8.54",
+    "vitest": "~4.0"
+  },
+  "license": "MIT",
+  "packageManager": "bun@1.2.14"
+}

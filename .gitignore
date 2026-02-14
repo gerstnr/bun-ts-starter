@@ -1,0 +1,49 @@
+# Dependencies
+node_modules/
+
+# Build / output
+dist/
+build/
+out/
+*.tsbuildinfo
+
+# Coverage
+coverage/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Cursor (track .cursor/commands and .cursor/skills, ignore the rest)
+.cursor/*
+!.cursor/commands/
+!.cursor/skills
+
+# direnv
+.direnv/
+
+# Bun
+bun-debug.log*
+
+# ESLint cache
+.eslintcache
+
+# Agent scratchpad (session-only, not committed)
+.agents/scratchpad.md
+
+# Temporary
+tmp/
