@@ -26,6 +26,8 @@ Use this skill when:
 
 Use the format documented at the top of each file. Include today's date, a short title, and enough context that a future agent (with no prior session history) can understand and apply it.
 
+**Appending correctly:** Memory files are append-only. Before using `StrReplace`, read the end of the file to find the true last entry. Anchor your replacement on that entry's final line — don't assume from session memory which entry is last. Getting this wrong inserts entries mid-file.
+
 ### 4. Keep entries concise
 
 Each entry should be 2–5 lines. Don't duplicate what's already in AGENTS.md — memory files capture project-specific learnings, not general coding rules.

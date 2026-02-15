@@ -19,7 +19,7 @@ __tests__/
 .agents/
   context.md           — this file; project overview for agents
   memory/              — persistent corrections and decisions
-  scratchpad.md        — ephemeral working memory (not committed)
+  .tmp/                — scratchpads, throwaway scripts, screenshots (not committed)
   skills/              — agent skills (shared via .cursor/skills symlink)
 ```
 

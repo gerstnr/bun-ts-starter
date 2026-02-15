@@ -51,14 +51,27 @@ New logic should have tests. New branches (if/else, switch cases, error paths) s
 bun run test:coverage
 ```
 
-### 8. Diff is minimal
+### 8. No browser errors (if UI changes)
+
+If the diff touches browser-rendered code (React components, web UI), verify there are no errors — both in the console **and** in the DOM. Frameworks often render error messages into the page (banners, toasts, modals) that never appear in `console.error`.
+
+Use the [playwright-cli](../playwright-cli/SKILL.md) skill. At minimum:
+
+1. **Console errors**: Attach a `console` listener and `pageerror` handler before navigating.
+2. **DOM-rendered errors**: After the page loads, inspect `document.body.innerText` for error/warning keywords (e.g., "error", "failed", "cannot"). Check framework-specific error UI locations if known.
+
+See the "Capturing browser console output" and "Collecting logs and screenshot together" sections in the playwright-cli skill for ready-made scripts.
+
+Skip this check if the diff has no browser-rendered code changes.
+
+### 9. Diff is minimal
 
 Review the full diff. Remove:
 - Unrelated formatting changes
 - Whitespace-only changes in files you didn't modify
 - Unintended file additions
 
-### 9. Memory capture
+### 10. Memory capture
 
 If the session involved corrections or decisions, use the [remember](../remember/SKILL.md) skill to record them before committing.
 
