@@ -10,11 +10,15 @@ Requires [Bun](https://bun.sh/) (see `packageManager` in `package.json` for the 
 bun install
 ```
 
-[direnv](https://direnv.net/) is used to automatically add `node_modules/.bin` to PATH:
+[direnv](https://direnv.net/) is used to automatically add `node_modules/.bin` to PATH and load `.env.local`:
 
 ```sh
 direnv allow
 ```
+
+### Environment variables
+
+Copy `.env.example` to `.env.local` and fill in values. `.env.local` is gitignored and auto-loaded by direnv.
 
 ## Scripts
 
@@ -28,6 +32,16 @@ direnv allow
 | `bun run prettier` | Format source files |
 | `bun run prettier:check` | Check formatting |
 | `bun run clean` | Remove coverage and temp files |
+
+## Agent skills
+
+Skills live in `.agents/skills/` and provide specialized capabilities for AI coding agents. Notable skills included in this starter:
+
+| Skill | Description |
+|---|---|
+| [docs-context7](.agents/skills/docs-context7/SKILL.md) | Query up-to-date library documentation via [Context7](https://context7.com/) MCP using [mcporter](https://github.com/steipete/mcporter). Includes TypeScript reference scripts. |
+
+See [AGENTS.md](AGENTS.md) for the full skill list and agent guidelines.
 
 ## Stack
 

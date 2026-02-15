@@ -7,7 +7,7 @@ import tseslint from 'typescript-eslint';
 
 export default [
   {
-    ignores: ['**/build/**', '**/tmp/**', '**/coverage/**'],
+    ignores: ['**/build/**', '**/tmp/**', '**/coverage/**', '.agents/**/scripts/**'],
   },
   eslint.configs.recommended,
   eslintConfigPrettier,

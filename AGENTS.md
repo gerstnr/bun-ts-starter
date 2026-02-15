@@ -98,6 +98,7 @@ Agent skills live in `.agents/skills/` (canonical location, shared by all agents
 | **[openspec-onboard](.agents/skills/openspec-onboard/SKILL.md)** | Guided onboarding for OpenSpec workflow |
 | **[openspec-sync-specs](.agents/skills/openspec-sync-specs/SKILL.md)** | Syncing delta specs to main specs |
 | **[openspec-verify-change](.agents/skills/openspec-verify-change/SKILL.md)** | Verifying implementation matches change artifacts |
+| **[docs-context7](.agents/skills/docs-context7/SKILL.md)** | Querying up-to-date library documentation via Context7 MCP |
 | **[vercel-react-best-practices](.agents/skills/vercel-react-best-practices/SKILL.md)** | Writing/reviewing React/Next.js code for performance |
 
 **Adding a new skill**: Create `.agents/skills/<name>/SKILL.md` with YAML frontmatter containing `name` and `description`. The description states when to use the skill, so it must be keyword dense. Nevertheless keep description and skill names brief. Then add one row to the table above. Do **not** create files in `.cursor/skills/` — it is symlinked to `.agents/skills/` and stays in sync automatically.

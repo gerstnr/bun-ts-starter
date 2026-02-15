@@ -27,3 +27,13 @@ Format:
 **Decision:** Enable `strict: true` in tsconfig.json.
 **Alternatives:** Granular strict flags.
 **Rationale:** Aligns with AGENTS.md coding standards (no `any`, unknown catch variables, etc.). Catches more bugs at compile time.
+
+### 2026-02-15 — Skills with scripts: docs-context7 as first example
+**Decision:** Encapsulate Context7 integration as an agent skill (`docs-context7`) with a `scripts/` subfolder containing runnable TypeScript reference code. Keep `src/` as a clean boilerplate starter.
+**Alternatives:** (A) Context7 code in `src/` (couples boilerplate to a specific MCP), (B) separate `examples/` directory (needs tsconfig adjustments, less self-contained), (C) skill with CLI instructions only, no TypeScript code (loses the programmatic reference).
+**Rationale:** A self-contained skill folder is portable (copy to any project), keeps `src/` clean, and provides both CLI instructions (SKILL.md for agents) and TypeScript examples (scripts/ for humans). Skills with scripts/ is a new convention for this project — documented in context.md.
+
+### 2026-02-15 — mcporter as devDependency
+**Decision:** Install mcporter as a devDependency, not a regular dependency.
+**Alternatives:** Regular dependency.
+**Rationale:** After the skill refactor, nothing in `src/` imports mcporter. It's only used by skill scripts (developer/agent tooling), same category as eslint or vitest. devDependencies are excluded only in production installs, which is correct — skill scripts don't run in production.
