@@ -11,6 +11,19 @@ Well-crafted commit messages communicate context to fellow developers and your f
 
 ## Before committing
 
+### Branch sanity check
+
+Before staging, verify the current branch is appropriate for this change:
+
+1. Run `git status` and `git log --oneline -5`.
+2. **If the branch tracks a remote and is up-to-date** (i.e., "up to date with 'origin/...'"), prior work has been pushed. Ask the user whether this is a continuation or whether a new branch is needed.
+3. **If the branch name doesn't relate to the commit subject**, flag the mismatch. Example: branch `fix-auth-flow`, commit about adding a new feature.
+4. **If on `main`/`master` and the change is non-trivial**, suggest creating a feature branch first.
+
+If any check flags, present the concern and offer to create a new branch. Do not refuse to commit — the user may have a valid reason to stay on the current branch.
+
+### Review
+
 For non-trivial changes (multiple files, new features, refactors), run the [review](.agents/skills/review/SKILL.md) skill first. For small, obvious changes (typos, single-line fixes), use your judgment — a full review pass may be overkill.
 
 ## When to Use
